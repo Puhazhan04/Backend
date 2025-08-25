@@ -1,0 +1,6 @@
+@M295_ILBA24_HostAddress = http://localhost:5173
+
+GET {{M295_ILBA24_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

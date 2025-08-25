@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>M295_ILBA24</name>
+    </assembly>
+    <members>
+        <member name="M:M295_ILBA24.Controllers.ActorController.GetAllActorsAsync(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Fetches all actors from the database
+            </summary>
+            <param name="actorId">The id of the action to filter for</param>
+            <param name="page">The page to load</param>
+            <param name="pageSize">The page-size - default is 10 elements per page</param>
+            <returns>
+            A collection of all actors
+            </returns>
+            <code>
+            GET /actor
+            </code>
+            <response code="200">Returns all actors</response>
+        </member>
+        <member name="M:M295_ILBA24.Controllers.AddressController.GetAllAddresses">
+            <summary>
+            Returns all addresses
+            </summary>
+            <response code="200">Returns all addresses</response>
+            <response code="500">If an error occurs</response>
+            <returns>A collection of addresses</returns>
+        </member>
+        <member name="M:M295_ILBA24.Controllers.AddressController.CreateAddress(M295_ILBA24.DTOs.AddressRequestDto)">
+            <summary>
+            Beispielcode - C# kann keine Geometry Data erstellen (sakila)
+            TODO: Find a way to create geometry data
+            </summary>
+            <param name="addressRequestDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:M295_ILBA24.Controllers.RentalController.GetFilteredRentalsAsync(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Filtert die Verleihvorgänge nach optionalen Parametern wie Kundenname, Filmname oder Mitarbeitername.
+            </summary>
+            <param name="customerFirstName">Vorname des Kunden (optional, StartsWith)</param>
+            <param name="customerLastName">Nachname des Kunden (optional, StartsWith)</param>
+            <param name="filmTitle">Titel des Films (optional, StartsWith)</param>
+            <param name="staffFirstName">Vorname des Mitarbeiters (optional, StartsWith)</param>
+            <param name="staffLastName">Nachname des Mitarbeiters (optional, StartsWith)</param>
+            <returns>Liste von gefilterten Verleihvorgängen</returns>
+        </member>
+        <member name="M:M295_ILBA24.Controllers.RentalController.GetRentalByIdAsync(System.Int32)">
+            <summary>
+            Gibt einen einzelnen Verleihvorgang anhand der ID zurück.
+            </summary>
+            <param name="id">ID des Verleihvorgangs</param>
+            <returns>Details des Verleihvorgangs</returns>
+        </member>
+        <member name="M:M295_ILBA24.Controllers.RentalController.CreateRentalAsync(M295_ILBA24.DTOs.RentalRequestDto)">
+            <summary>
+            Erstellt einen neuen Verleih.
+            </summary>
+            <param name="rental">Verleihdaten wie Kunde, Mitarbeiter und InventarNr</param>
+            <returns>Der erstellte Verleihvorgang</returns>
+        </member>
+        <member name="M:M295_ILBA24.Controllers.RentalController.CloseRentalAsync(System.Int32)">
+            <summary>
+            Schliesst einen Verleihvorgang ab, indem das Rückgabedatum gesetzt wird.
+            </summary>
+            <param name="id">ID des Verleihvorgangs</param>
+            <returns>Aktualisierte Verleihdaten</returns>
+        </member>
+        <member name="M:M295_ILBA24.Services.RentalService.GetFilteredRentalsAsync(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Holt alle Verleihvorgänge mit optionalen Filterparametern.
+            </summary>
+        </member>
+        <member name="M:M295_ILBA24.Services.RentalService.GetById(System.Int32)">
+            <summary>
+            Holt einen einzelnen Verleihvorgang anhand der ID.
+            </summary>
+            <param name="id">ID des Verleihs</param>
+            <returns>Ein einzelner Verleihvorgang als DTO</returns>
+        </member>
+        <member name="M:M295_ILBA24.Services.RentalService.CreateRentalAsync(M295_ILBA24.DTOs.RentalRequestDto)">
+            <summary>
+            Erstellt einen neuen Verleihvorgang im System.
+            </summary>
+            <param name="rental">DTO mit InventarNr, Kunde und Mitarbeiter</param>
+            <returns>Das erstellte Verleihobjekt</returns>
+        </member>
+        <member name="M:M295_ILBA24.Services.RentalService.CloseRentalAsync(System.Int32)">
+            <summary>
+            Schliesst einen Verleihvorgang ab, indem das Rückgabedatum gesetzt wird.
+            </summary>
+            <param name="id">ID des zu schließenden Verleihs</param>
+            <returns>Das aktualisierte Verleihobjekt</returns>
+            <exception cref="T:M295_ILBA24.Exceptions.ResourceNotFoundException">Wenn kein Verleih mit der ID gefunden wird</exception>
+        </member>
+    </members>
+</doc>
